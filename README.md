@@ -7,7 +7,7 @@ This program simulates an intelligent (adaptive) traffic light control system fo
 It mimics how real smart city systems manage traffic dynamically — by adjusting signal timing based on conditions.
 Although this version uses fixed timing, it can easily be modified to change green time depending on traffic density input.
 
-🧩 Header Files
+ Header Files
 #include <iostream>   // for input/output
 #include <thread>     // for sleep and parallel execution
 #include <chrono>     // for time duration (seconds)
@@ -15,7 +15,7 @@ Although this version uses fixed timing, it can easily be modified to change gre
 
 These libraries allow you to print messages, pause the program for specific durations, and simulate real-time countdowns.
 
-🎨 Color Definitions
+ Color Definitions
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
 #define YELLOW  "\033[33m"
@@ -26,7 +26,7 @@ These libraries allow you to print messages, pause the program for specific dura
 
 These are ANSI escape codes used to print colorful text in the terminal (Red for STOP, Green for GO, etc.) — making the simulation visually clear.
 
-⏳ Countdown Function
+ Countdown Function
 void countdown(int seconds) {
     for (int i = seconds; i > 0; --i) {
         cout << "   Remaining: " << i << " seconds\r";
@@ -43,13 +43,13 @@ The \r brings the cursor back to the start of the line — so the countdown upda
 
 sleep_for() pauses execution for one second each loop.
 
-🕒 Example Output:
+ Example Output:
 
 Remaining: 10 seconds
 Remaining: 9 seconds
 ...
 
-🚦 Show Signal Function
+ Show Signal Function
 void showSignal(string activeDirection, string phase)
 
 
@@ -69,7 +69,7 @@ The active direction changes color and message.
 
 All others remain RED (STOP).
 
-🟢 Example:
+ Example:
 If activeDirection = "North" and phase = "GREEN", output might be:
 
 North : GREEN (GO)
@@ -77,7 +77,7 @@ East  : RED (STOP)
 South : RED (STOP)
 West  : RED (STOP)
 
-🔁 Run Signal Function
+ Run Signal Function
 void runSignal(string direction, int greenTime, int yellowTime, int redTime)
 
 
@@ -99,7 +99,7 @@ countdown(time);
 
 Then, a short 2-second pause is added between direction changes.
 
-🧠 Main Function
+ Main Function
 int main() {
     cout << "SMART TRAFFIC LIGHT CONTROL SYSTEM" << endl;
 
@@ -131,9 +131,9 @@ Uses an infinite loop (while (true)) to continuously run the system.
 
 Each direction gets a full light cycle using runSignal().
 
-🌀 After one full rotation through all four directions, it waits for 3 seconds, then repeats.
+ After one full rotation through all four directions, it waits for 3 seconds, then repeats.
 
-🧠 How It Imitates a Smart System
+ How It Imitates a Smart System
 
 While this version uses fixed times, a real “smart” system can:
 
@@ -147,7 +147,7 @@ if (trafficDensity == "High") greenTime = 25;
 else if (trafficDensity == "Medium") greenTime = 15;
 else greenTime = 10;
 
-🧾 Sample Output (Simplified)
+ Sample Output (Simplified)
          SMART TRAFFIC LIGHT CONTROL SYSTEM
 
 Now active direction: North
